@@ -19,6 +19,7 @@ The ultimate goal of the project is for you to be able to download a framework t
 - You can now make an npm run dev
 ---
 4. Now, with the first terminal running the backend and the second running the frontend, everything should work.
+5. The database starts with 3 default users: robert, jhon, pedro; all of these users have the password 1234. If you want to make more users, you can use the scripts for testing that are in backend/database/forTesting.js. There is no other option to create users outside of this.
 
 ### General API System
 
