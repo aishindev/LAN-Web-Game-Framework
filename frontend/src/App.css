@@ -1,0 +1,12 @@
+:root {
+  --primary: #1C2127;
+  --secondary: #181C20;
+  --accent: #456EEB;
+  --font-color: white;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}

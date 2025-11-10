@@ -1,0 +1,77 @@
+.body {
+  height: 100%;
+  width: 100%;
+  background-color: var(--primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.login_container {
+  width: 100%;
+  max-width: 400px;
+  padding: 40px 30px;
+  background-color: var(--secondary);
+  position: relative;
+  border-radius: 12px;
+}
+
+.title {
+  color: var(--font-color);
+  margin-bottom: 30px;
+  font-size: 28px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.input-group {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.label {
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: var(--font-color);
+}
+
+.input {
+  width: 100%;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 6px;
+  background-color: var(--primary);
+  font-size: 16px;  
+  color: white;
+  outline: none;
+  transition: all 0.3s; 
+} 
+
+.inputError {
+  width: 100%;
+  padding: 12px 15px;
+  border:  2px solid red;
+  border-radius: 6px;
+  background-color: var(--primary);
+  font-size: 16px;  
+  color: white;
+  outline: none;
+  transition: all 0.3s; 
+}
+
+.button { 
+  width: 100%;
+  padding: 12px;
+  background-color: var(--accent);
+  color: var(--font-color);
+  border: 2px solid var(--primary);
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: all 0.3s;
+}
