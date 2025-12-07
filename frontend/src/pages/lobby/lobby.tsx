@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Socket } from "socket.io-client";
 
-import { startGame, connectToLobby, checkIfGameAlreadyStart } from "../../service/API/socketAPI/socketAPI";
+import { startGame, connectToLobby, checkIfGameAlreadyStart } from "../../service/API/socketAPI";
 import Chat from "../../components/ui/chat/chat";
 import styles from "./lobby.module.css"
 

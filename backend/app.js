@@ -1,6 +1,10 @@
 // Initial configuration
 require('dotenv').config()
 
+// Network config
+let host = process.env.PRIVATE_IP;
+const port = process.env.PORT;
+
 // Internal modules
 const jwt = require("./src/controllers/jwt");
 const { database } = require("./database/databaseController");
@@ -20,12 +24,12 @@ app.use(cookieParser());
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: `http://${host}:5173`,
   })
 );
 
-let expressServer = app.listen(process.env.PORT, () => {
-  console.log("\n- Server working in: " + `127.0.0.0:${process.env.PORT}.\n`);
+let expressServer = app.listen(port, host, () => {
+  console.log("\n- Server working in: " + `${host}:${port}.\n`);
 }); 
 
 // Security and accounts management
@@ -58,7 +62,7 @@ app.post("/api/createLobby", async (req, res) => {
 // Function`s to handle the communication between clients.
 
 const io = new Server(expressServer, {
-  cors: { origin: "http://localhost:5173/" },
+  cors: { origin: `http://${host}:5173/` },
   credentials: true,
 });
 
@@ -182,7 +186,7 @@ io.on("connection", (socket) => {
           let playerLimit = await database.checkPlayerLimitSQL("tic_tae_toe", lobby_id) 
           .catch((err) => { return callback({errorType: err.errorType, operationSuccess: false})});
 
-          if(response.length > playerLimit) return callback({errorType: "playerLimitSurpassed", operationSuccess: false});
+          if(response.length > playerLimit[0].max_player_capacity) return callback({errorType: "playerLimitSurpassed", operationSuccess: false});
 
           switch(message.gameMode) {
             case "normal": 

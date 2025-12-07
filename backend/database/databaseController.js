@@ -265,10 +265,13 @@ class databaseClass {
     });
   }
 
-  checkPlayerLimitSQL(gameName) {
+  checkPlayerLimitSQL(gameName, lobby_id) {
+    if (this.#game_names.includes(gameName) === false)
+    return reject({errorType: "gameNameError"});
     return new Promise((resolve, reject) => {
       this.db.all(
-        `SELECT max_player_capacity FROM ${gameName} WHERE ${gameName}_id = 1`,
+        `SELECT max_player_capacity FROM ${gameName} WHERE ${gameName}_id = ?`,
+        [lobby_id],
         (error, row) => {
           if (error)
             return reject({ errorType: "databaseError", error: error.message });

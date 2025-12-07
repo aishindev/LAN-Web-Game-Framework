@@ -2,7 +2,7 @@ import { Socket } from "socket.io-client";
 import Chat from "../../components/ui/chat/chat";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import {connectToLobby} from "../../service/API/socketAPI/socketAPI";
+import {connectToLobby} from "../../service/API/socketAPI";
 import TicTacToe from "../../components/games/Tictaetoe/tictaetoe";
 
 interface socketProps {

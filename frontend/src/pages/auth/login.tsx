@@ -14,8 +14,13 @@ function Login(props: {socket: Socket}) {
   const [, setCookie] = useCookies(['token']);
   const navigate = useNavigate();
 
+  const urlParameters = {
+    host: import.meta.env.VITE_PRIVATE_IP,
+    port: import.meta.env.VITE_PORT
+  }
+
   function handleSendLoginInfo() {    
-    fetch("http://127.0.0.1:4000/api/login", {
+    fetch(`http://${urlParameters.host}:${urlParameters.port}/api/login`, {
       method: 'POST',
       headers: {
       'Content-Type': 'application/json'

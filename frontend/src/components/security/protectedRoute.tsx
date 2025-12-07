@@ -1,7 +1,7 @@
 import { ReactNode, useState } from "react";
 import { useCookies } from "react-cookie";
 import { Navigate, Outlet } from "react-router-dom";
-import { checkToken } from "../../service/API/normalAPI/normalAPI";
+import { checkToken } from "../../service/API/normalAPI";
 
 interface props {
   children?: ReactNode;

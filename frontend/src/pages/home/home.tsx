@@ -1,7 +1,7 @@
 import { Socket } from "socket.io-client";
 import Chat from "../../components/ui/chat/chat";
 import { useEffect, useState } from "react";
-import { connectToPublicRoom, enterToLobby } from "../../service/API/socketAPI/socketAPI";
+import { connectToPublicRoom, enterToLobby } from "../../service/API/socketAPI";
 import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
 
@@ -11,6 +11,11 @@ export default function Home(props: {socket: Socket}) {
   const { socket } = props;
   const [roomConnected, setRoomconected] = useState(false)
   const [cookies] = useCookies(["token"]);
+
+  const urlParameters = {
+    host: import.meta.env.VITE_PRIVATE_IP,
+    port: import.meta.env.VITE_PORT
+  }
   
   const [lobbyName, setLobbyName] = useState("");
   const [lobby_id, setLobbyid] = useState("");
@@ -25,7 +30,7 @@ export default function Home(props: {socket: Socket}) {
   const gameNames = ["tic_tae_toe"];
 
   function handleNewGame() {
-    fetch("http://127.0.0.1:4000/api/createLobby", {
+    fetch(`http://${urlParameters.host}:${urlParameters.port}/api/createLobby`, {
       method: "POST",
       headers: {
         'Content-Type': 'application/json'
