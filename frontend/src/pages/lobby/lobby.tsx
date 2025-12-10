@@ -40,7 +40,6 @@ export default function Lobby(props: {socket: Socket}) {
       })
       
       connectToLobby(socket, id).then((response) => {
-        console.log(response)
         if(response.operationSuccess && response.isTheOwner) {
           return setlobbyConfigValues({
             gameName: response.gameName,

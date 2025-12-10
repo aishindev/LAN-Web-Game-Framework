@@ -96,7 +96,7 @@ function createNewGame(tableName, max_player_capacity) {
   // if you add a value that cannot be null you have to add it to the insert.
   db.run(
     `INSERT INTO ${tableName} (${tableName}_id, lobby_id, max_player_capacity) VALUES (?, ?, ?)`,
-    [0, 0, max_player_capacity],
+    [1, 0, max_player_capacity],
     function (error) {
       if (error) return console.log(error);
       else console.log("Template of game inserted");

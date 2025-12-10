@@ -270,8 +270,7 @@ class databaseClass {
     return reject({errorType: "gameNameError"});
     return new Promise((resolve, reject) => {
       this.db.all(
-        `SELECT max_player_capacity FROM ${gameName} WHERE ${gameName}_id = ?`,
-        [lobby_id],
+        `SELECT max_player_capacity FROM ${gameName} WHERE ${gameName}_id = 1`,
         (error, row) => {
           if (error)
             return reject({ errorType: "databaseError", error: error.message });
