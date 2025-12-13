@@ -1,8 +1,8 @@
 ## Introduction
 
-This project is a framework for creating web LAN games, based on Node.js / Express, Socket.io and React.
+This project is a template for creating web LAN games, based on Node.js / Express, Socket.io and React.
 
-The ultimate goal of the project is for you to be able to download a framework to solve the boring parts (login, connecting the people, etc.) so so that you can concentrate 100% on creating your game.
+The ultimate goal of the project is for you to be able to download a template to solve the boring parts (login, connecting the people, etc.) so so that you can concentrate 100% on creating your game.
 
 This project is still in beta, so errors may occur. If you encounter any, please let me know.
 
